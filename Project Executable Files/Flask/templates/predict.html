@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zDluGLAkDR4oqKfGjvuHNw.png");
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: calc(100vh - 80px);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            max-width: 800px;
+            margin: 10px;
+            color: black;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar-brand, .navbar-nav > li > a {
+            color: white !important;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .navbar-nav > li > a:hover, .navbar-nav > li.active > a {
+            background-color: transparent !important;
+            border-bottom: 2px solid white;
+            color: #f6f67f !important; /* Slight color change for hover effect */
+        }
+        .form-group label {
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Employee Promotion Prediction Using ML</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li class="active"><a href="/predict">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h2 class="text-center">Predict Employee Promotion</h2>
+        <form action="/pred" method="post">
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="department">Department</label>
+                    <select class="form-control" id="department" name="department" required>
+                        {% for option in department_options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="education">Education</label>
+                    <select class="form-control" id="education" name="education" required>
+                        <option value="1">Below Secondary</option>
+                        <option value="2">Bachelor's</option>
+                        <option value="3">Master's & above</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="no_of_trainings">Number of Trainings</label>
+                    <input type="number" class="form-control" name="no_of_trainings" id="no_of_trainings" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" name="age" id="age" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="previous_year_rating">Previous Year Rating</label>
+                    <input type="number" step="0.1" class="form-control" name="previous_year_rating" id="previous_year_rating" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="length_of_service">Length of Service (Years)</label>
+                    <input type="number" class="form-control" name="length_of_service" id="length_of_service" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="KPIs">KPIs Met >80%</label>
+                    <select class="form-control" id="KPIs" name="KPIs" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="awards_won">Awards Won</label>
+                    <select class="form-control" id="awards_won" name="awards_won" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="avg_training_score">Average Training Score</label>
+                    <input type="number" step="0.1" class="form-control" name="avg_training_score" id="avg_training_score" required />
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

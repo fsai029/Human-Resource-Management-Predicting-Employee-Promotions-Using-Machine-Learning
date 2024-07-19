@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1542744095-291d1f67b221");
+            background-color: #cccccc;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .content h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar-brand, .navbar-nav > li > a {
+            color: white !important;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .navbar-nav > li > a:hover, .navbar-nav > li.active > a {
+            background-color: transparent !important;
+            border-bottom: 2px solid white;
+            color: #f6f67f !important; /* Slight color change for hover effect */
+        }
+        .footer {
+            background-color:transparent;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Employee Promotion Prediction Using ML</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/predict">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+ 
+    <div class="content">
+        <h1>Welcome to Employee Promotion Prediction</h1>
+        <p>Predict employee promotions using machine learning.</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Employee Promotion Prediction
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"); /* Updated background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px;
+        }
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar-brand, .navbar-nav > li > a {
+            color: white !important;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .navbar-nav > li > a:hover, .navbar-nav > li.active > a {
+            background-color: transparent !important;
+            border-bottom: 2px solid white;
+            color: #f6f67f !important; /* Slight color change for hover effect */
+        }
+        footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+            color: white;
+            background: transparent;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Employee Promotion Prediction Using ML</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/home">Home</a></li>
+                <li class="active"><a href="/about">About</a></li>
+                <li><a href="/predict">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>About Employee Promotion Prediction</h1>
+        <p>Promotion or career advancement is a process through which an employee of a company is given a higher share of duties, a higher pay scale, or both. Promotion is not just beneficial for employees but is also highly crucial for the employer or business owners. It boosts the morale of promoted employees, increases their productivity, and hence improves upon the overall profits earned by the organization.</p>
+        <p><strong>To predict your promotion, click on the <a href="/predict">Predict</a> button on the top right side corner.</strong></p>
+    </div>
+
+    <footer>
+        &copy; 2024 Employee Promotion Prediction
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

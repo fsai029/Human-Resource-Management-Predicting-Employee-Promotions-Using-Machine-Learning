@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px;
+            color: black;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar-brand, .navbar-nav > li > a {
+            color: white !important;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .navbar-nav > li > a:hover, .navbar-nav > li.active > a {
+            background-color: transparent !important;
+            border-bottom: 2px solid white;
+            color: #f6f67f !important; /* Slight color change for hover effect */
+        }
+        .status-heading {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .status-text {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Employee Promotion Prediction Using ML</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="content text-center">
+        <h1 class="status-heading">Eligibility Status:</h1>
+        <p class="status-text">{{predictionText}}</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
